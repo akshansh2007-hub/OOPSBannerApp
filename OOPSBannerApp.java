@@ -1,14 +1,23 @@
-public class OOPSBannerApp {
+public class OOPSBanner {
     public static void main(String[] args) {
 
-        // OOPS Banner
-        System.out.println(String.join(" ", " *** ", " *** ", " ****", " ****"));
-        System.out.println(String.join(" ", "*   *", "*   *", "*   *", "*   *"));
-        System.out.println(String.join(" ", "*   *", "*   *", "*   *", "*    "));
-        System.out.println(String.join(" ", "*   *", "*   *", " ****", " *** "));
-        System.out.println(String.join(" ", "*   *", "*   *", "*    ", "    *"));
-        System.out.println(String.join(" ", "*   *", "*   *", "*    ", "*   *"));
-        System.out.println(String.join(" ", " *** ", " *** ", "*    ", " *** "));
+        // String array to store all 7 lines
+        String[] banner = {
+
+            String.join(" ", "  *****  ", " *****  ", " ****** ", " ****** "),
+            String.join(" ", " *     * ", "*     * ", "*     * ", "*     * "),
+            String.join(" ", " *     * ", "*     * ", "*     * ", "*       "),
+            String.join(" ", " *     * ", "*     * ", " ****** ", " ****** "),
+            String.join(" ", " *     * ", "*     * ", "*       ", "       *"),
+            String.join(" ", " *     * ", "*     * ", "*       ", "*     * "),
+            String.join(" ", "  *****  ", " *****  ", "*       ", " ****** ")
+
+        };
+
+        // for-each loop to print banner
+        for (String line : banner) {
+            System.out.println(line);
+        }
 
     }
 }
