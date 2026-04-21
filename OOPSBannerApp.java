@@ -1,35 +1,25 @@
-import java.util.Random;
-
 class OOPSBannerApp {
-    static String player1;
-    static String player2;
-    static char player1Symbol;
-    static char player2Symbol;
-    static String currentPlayer;
+    static char[][] board = new char[3][3];
 
-    static void toss() {
-        Random random = new Random();
-        boolean player1Starts = random.nextBoolean();
+    static void initializeBoard() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                board[i][j] = '-';
+            }
+        }
+    }
 
-        if (player1Starts) {
-            currentPlayer = player1;
-            player1Symbol = 'X';
-            player2Symbol = 'O';
-        } else {
-            currentPlayer = player2;
-            player1Symbol = 'O';
-            player2Symbol = 'X';
+    static void printBoard() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 
     public static void main(String[] args) {
-        player1 = "Player1";
-        player2 = "Player2";
-
-        toss();
-
-        System.out.println("First turn: " + currentPlayer);
-        System.out.println("Player1 symbol: " + player1Symbol);
-        System.out.println("Player2 symbol: " + player2Symbol);
+        initializeBoard();
+        printBoard();
     }
 }
