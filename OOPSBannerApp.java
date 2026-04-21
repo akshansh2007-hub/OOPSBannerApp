@@ -1,30 +1,13 @@
 class OOPSBannerApp {
-    static char[][] board = {
-        {'-', '-', '-'},
-        {'-', '-', '-'},
-        {'-', '-', '-'}
-    };
-
-    static boolean isValidMove(int row, int col) {
-        if (row < 0 || row > 2 || col < 0 || col > 2) {
-            return false;
-        }
-        return board[row][col] == '-';
-    }
-
-    static boolean makeMove(int row, int col, char symbol) {
-        if (isValidMove(row, col)) {
-            board[row][col] = symbol;
-            return true;
-        }
-        return false;
+    static int[] getRowCol(int slot) {
+        int row = (slot - 1) / 3;
+        int col = (slot - 1) % 3;
+        return new int[]{row, col};
     }
 
     public static void main(String[] args) {
-        if (makeMove(1, 1, 'X')) {
-            System.out.println("Move accepted");
-        } else {
-            System.out.println("Move rejected");
-        }
+        int slot = 7;
+        int[] result = getRowCol(slot);
+        System.out.println(result[0] + " " + result[1]);
     }
 }
